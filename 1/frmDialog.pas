@@ -7,37 +7,32 @@ uses
   Dialogs, StdCtrls;
 
 type
-  TFormDlg = class(TForm)
-    btnOk: TButton;
-    btnCancel: TButton;
-    btnHi: TButton;
-    procedure btnHiClick(Sender: TObject);
+  TDialogForm = class(TForm)
+    btnOpenA: TButton;
+    btnOpenB: TButton;
+    procedure btnOpenAClick(Sender: TObject);
+    procedure btnOpenBClick(Sender: TObject);
   private
-    fSomeThing: String;
+    { Private declarations }
   public
-    class procedure Execute(aSomeThing: string);
+    { Public declarations }
   end;
 
 implementation
 
+uses
+  frmDialogB, frmDialogA;
+
 {$R *.dfm}
 
-procedure TFormDlg.btnHiClick(Sender: TObject);
+procedure TDialogForm.btnOpenAClick(Sender: TObject);
 begin
-  ShowMessage(fSomeThing);
+  TDialogAForm.Execute(self, 'Hi A!');
 end;
 
-class procedure TFormDlg.Execute(aSomeThing: string);
-var
-  aForm: TFormDlg;
+procedure TDialogForm.btnOpenBClick(Sender: TObject);
 begin
-  aForm := TFormDlg.Create(nil);
-  try
-    aForm.fSomeThing := aSomeThing;
-    aForm.ShowModal;
-  finally
-    aForm.Free;
-  end;
+  TDialogAForm.Execute(self, 'Hi B!');
 end;
 
 end.

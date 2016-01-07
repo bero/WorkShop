@@ -1,0 +1,44 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{189c88eb-e9c9-4d97-a105-18e696830e8c}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="C:\Attracs\Attracs-Online\server\AttracsServer.dproj" />
+    <Projects Include="Project2.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="Project2">
+    <MSBuild Projects="Project2.dproj" Targets="" />
+  </Target>
+  <Target Name="Project2:Clean">
+    <MSBuild Projects="Project2.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Project2:Make">
+    <MSBuild Projects="Project2.dproj" Targets="Make" />
+  </Target>
+  <Target Name="AttracsServer">
+    <MSBuild Projects="C:\Attracs\Attracs-Online\server\AttracsServer.dproj" Targets="" />
+  </Target>
+  <Target Name="AttracsServer:Clean">
+    <MSBuild Projects="C:\Attracs\Attracs-Online\server\AttracsServer.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="AttracsServer:Make">
+    <MSBuild Projects="C:\Attracs\Attracs-Online\server\AttracsServer.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="Project2;AttracsServer" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="Project2:Clean;AttracsServer:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="Project2:Make;AttracsServer:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

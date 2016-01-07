@@ -3,7 +3,10 @@ program Project2;
 uses
   Forms,
   frmMain in 'frmMain.pas' {Main},
-  frmDialog in 'frmDialog.pas' {FormDlg};
+  frmAbstractDialog in 'frmAbstractDialog.pas' {AbstractDialog},
+  frmDialogB in 'frmDialogB.pas' {DialogBForm},
+  frmDialogA in 'frmDialogA.pas' {DialogAForm},
+  frmDialog in 'frmDialog.pas' {DialogForm};
 
 {$R *.res}
 

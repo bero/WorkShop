@@ -8,8 +8,12 @@ uses
 
 type
   TMain = class(TForm)
-    btnOpen: TButton;
-    procedure btnOpenClick(Sender: TObject);
+    btnOpenGeneral: TButton;
+    btnOpenA: TButton;
+    btnOpenB: TButton;
+    procedure btnOpenAClick(Sender: TObject);
+    procedure btnOpenGeneralClick(Sender: TObject);
+    procedure btnOpenBClick(Sender: TObject);
   end;
 
 var
@@ -20,11 +24,23 @@ implementation
 {$R *.dfm}
 
 uses
-  frmDialog;
+  frmDialog,
+  frmdialogA,
+  frmDialogB;
 
-procedure TMain.btnOpenClick(Sender: TObject);
+procedure TMain.btnOpenGeneralClick(Sender: TObject);
 begin
-  TFormDlg.Execute('Hi!');
+  TDialogForm.Create(nil).Show;
+end;
+
+procedure TMain.btnOpenAClick(Sender: TObject);
+begin
+  TDialogAForm.Execute(self, 'Hi A!');
+end;
+
+procedure TMain.btnOpenBClick(Sender: TObject);
+begin
+  TDialogBForm.Execute(self, 'Hi B!');
 end;
 
 end.

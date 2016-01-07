@@ -1,9 +1,10 @@
-object FormDlg: TFormDlg
+object DialogForm: TDialogForm
   Left = 0
   Top = 0
-  Caption = 'FormDlg'
-  ClientHeight = 140
-  ClientWidth = 210
+  BorderStyle = bsDialog
+  Caption = 'Dialog'
+  ClientHeight = 145
+  ClientWidth = 185
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,33 +14,22 @@ object FormDlg: TFormDlg
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object btnOk: TButton
-    Left = 88
-    Top = 107
-    Width = 49
-    Height = 25
-    Caption = 'Ok'
-    Default = True
-    ModalResult = 1
-    TabOrder = 0
-  end
-  object btnCancel: TButton
-    Left = 153
-    Top = 106
-    Width = 49
-    Height = 26
-    Cancel = True
-    Caption = 'Cancel'
-    ModalResult = 2
-    TabOrder = 1
-  end
-  object btnHi: TButton
-    Left = 8
-    Top = 8
+  object btnOpenA: TButton
+    Left = 40
+    Top = 32
     Width = 75
     Height = 25
-    Caption = 'Hi'
-    TabOrder = 2
-    OnClick = btnHiClick
+    Caption = 'Open A'
+    TabOrder = 0
+    OnClick = btnOpenAClick
+  end
+  object btnOpenB: TButton
+    Left = 40
+    Top = 72
+    Width = 75
+    Height = 25
+    Caption = 'Open B'
+    TabOrder = 1
+    OnClick = btnOpenBClick
   end
 end

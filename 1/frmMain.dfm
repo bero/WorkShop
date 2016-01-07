@@ -12,13 +12,31 @@ object Main: TMain
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object btnOpen: TButton
-    Left = 40
-    Top = 32
+  object btnOpenGeneral: TButton
+    Left = 24
+    Top = 16
     Width = 75
     Height = 25
-    Caption = 'Open'
+    Caption = 'Open dialog'
     TabOrder = 0
-    OnClick = btnOpenClick
+    OnClick = btnOpenGeneralClick
+  end
+  object btnOpenA: TButton
+    Left = 24
+    Top = 66
+    Width = 75
+    Height = 25
+    Caption = 'Open dialog A'
+    TabOrder = 1
+    OnClick = btnOpenAClick
+  end
+  object btnOpenB: TButton
+    Left = 24
+    Top = 114
+    Width = 75
+    Height = 25
+    Caption = 'Open dialog B'
+    TabOrder = 2
+    OnClick = btnOpenBClick
   end
 end
