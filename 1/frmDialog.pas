@@ -32,7 +32,7 @@ end;
 
 procedure TDialogForm.btnOpenBClick(Sender: TObject);
 begin
-  TDialogAForm.Execute(self, 'Hi B!');
+  TDialogBForm.Execute(self, 'Hi B!');
 end;
 
 end.

@@ -1,4 +1,4 @@
-program Project2;
+program WorkShop1;
 
 uses
   Forms,
