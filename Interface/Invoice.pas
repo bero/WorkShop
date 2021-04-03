@@ -7,8 +7,8 @@ uses
 
 type
   TInvoice = class
-  public
-    procedure ExportInvoice(aExporter: IInvoiceExporter);
+  private
+    procedure ExportInvoice(const aExporter: IInvoiceExporter);
   end;
 
 procedure MakeInvoice;
@@ -36,13 +36,16 @@ begin
     vInvoice.ExportInvoice(vEcoNet);
     vInvoice.ExportInvoice(vVisma);
   finally
+    vFinvoice.Free;
+    vEcoNet.Free;
+    vVisma.Free;
     vInvoice.Free;
   end;
 end;
 
 { TInvoice }
 
-procedure TInvoice.ExportInvoice(aExporter: IInvoiceExporter);
+procedure TInvoice.ExportInvoice(const aExporter: IInvoiceExporter);
 begin
   aExporter.ExportInvoice;
 end;

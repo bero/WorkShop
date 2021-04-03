@@ -131,6 +131,8 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="..\..\Attracs-Common\components\core\FastMM4.pas"/>
+        <DCCReference Include="..\..\Attracs-Common\components\core\FastMM4Messages.pas"/>
         <DCCReference Include="Invoice.pas"/>
         <DCCReference Include="Interfaces.pas"/>
         <DCCReference Include="Finvoice.pas"/>

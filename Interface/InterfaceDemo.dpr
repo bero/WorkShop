@@ -5,6 +5,8 @@ program InterfaceDemo;
 {$R *.res}
 
 uses
+  FastMM4 in '..\..\Attracs-Common\components\core\FastMM4.pas',
+  FastMM4Messages in '..\..\Attracs-Common\components\core\FastMM4Messages.pas',
   System.SysUtils,
   Invoice in 'Invoice.pas',
   Interfaces in 'Interfaces.pas',
@@ -14,6 +16,7 @@ uses
 
 begin
   try
+    ReportMemoryLeaksOnShutdown := True;
     MakeInvoice;
     WriteLn('Press Enter');
     ReadLn;
